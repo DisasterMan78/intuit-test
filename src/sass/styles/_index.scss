@@ -1,0 +1,12 @@
+header{
+    background: $dark-grey;
+}
+
+.header__home-link{
+    background-image: url('/assets/images/logo.png');
+    background-image: url('/assets/images/logo.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    text-indent: -999px;
+}

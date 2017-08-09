@@ -4517,4 +4517,19 @@ body {
   [class*="gr-"] {
     width: 100%; } }
 
+.header__home-link {
+  display: inline-block;
+  width: 175px;
+  height: 35px; }
+
+header {
+  background: #333333; }
+
+.header__home-link {
+  background-image: url("/assets/images/logo.png");
+  background-image: url("/assets/images/logo.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  text-indent: -999px; }
+
 /*# sourceMappingURL=maps/index.css.map */
