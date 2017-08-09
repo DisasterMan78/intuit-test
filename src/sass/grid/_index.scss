@@ -1,0 +1,15 @@
+@import '../../../node_modules/gridle/sass/grid';
+
+@include gridle_setup( (
+    context : 12,
+    gutter-width : 10px,
+    direction : rtl
+) );
+
+@include gridle_register_default_mobile_first_states();
+
+[class*="gr-"] {
+    @include gridle_state( xs ) {
+        @include gridle_grid( 12 );
+    }
+}

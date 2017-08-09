@@ -8,7 +8,7 @@ gulp.task('sass', function () {
   return gulp.src('./src/sass/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
-    .pipe(sourcemaps.write('./assets/maps'))
+    .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('./assets/css'));
 });
 
