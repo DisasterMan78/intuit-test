@@ -9,6 +9,23 @@ http.createServer(function(request, response) {
   var uri      = url.parse(request.url).pathname,
       filename = path.join(process.cwd(), uri);
 
+  const mimeType = {
+    '.ico': 'image/x-icon',
+    '.html': 'text/html',
+    '.js': 'text/javascript',
+    '.json': 'application/json',
+    '.css': 'text/css',
+    '.png': 'image/png',
+    '.jpg': 'image/jpeg',
+    '.wav': 'audio/wav',
+    '.mp3': 'audio/mpeg',
+    '.svg': 'image/svg+xml',
+    '.pdf': 'application/pdf',
+    '.doc': 'application/msword',
+    '.eot': 'appliaction/vnd.ms-fontobject',
+    '.ttf': 'aplication/font-sfnt'
+  };
+
   fs.exists(filename, function(exists) {
     if(!exists) {
       response.writeHead(404, {"Content-Type": "text/plain"});
@@ -27,7 +44,9 @@ http.createServer(function(request, response) {
         return;
       }
 
-      response.writeHead(200);
+      const ext = path.parse(filename).ext;
+
+      response.writeHead(200, {"Content-Type": mimeType[ext] || 'text/plain'});
       response.write(file, "binary");
       response.end();
     });
