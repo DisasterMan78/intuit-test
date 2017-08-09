@@ -13,3 +13,23 @@
         @include gridle_grid( 12 );
     }
 }
+
+@include gridle_register_state( mobile, (
+    max-width : 480px
+) );
+
+@include gridle_register_state( tablet, (
+    min-width : 481px
+) );
+
+@include gridle_register_state( desktop, (
+    min-width : 767px
+) );
+
+@include gridle_register_state( desktop-md, (
+    min-width : 1025px
+) );
+
+.container {
+    max-width : 1200 - ($gutter * 2);
+}

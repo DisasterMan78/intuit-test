@@ -1,5 +1,15 @@
+body {
+    font-family: 'avenir';
+
+    *{
+        box-sizing: border-box;
+    }
+}
+
 header{
     background: $dark-grey;
+
+    color: $white;
 }
 
 .header__home-link{
@@ -9,4 +19,83 @@ header{
     background-repeat: no-repeat;
 
     text-indent: -999px;
+}
+
+.topnav__{
+
+
+    font-size: 14px;
+    text-transform: uppercase;
+
+    border: 1px solid $white;
+    border-radius: 3px;
+
+    @include gridle_state( desktop ) {
+        border: none;
+    }
+
+    &control{
+        display: none;
+
+        + label {
+            cursor: pointer;
+
+            background-image: url('/assets/images/icons/menu.png');
+            background-image: url('/assets/images/icons/menu.svg');
+            background-size: 10px;
+            background-repeat: no-repeat;
+            background-position: $gutter;
+        }
+
+        &:checked{
+            + label{
+                background-image: url('/assets/images/icons/close.png');
+                background-image: url('/assets/images/icons/close.svg');
+
+                + .topnav__menu-wrapper{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &menu-wrapper{
+        background: $dark-grey;
+
+        opacity: 0;
+
+        transition: all 0.5s ease;
+
+        @include gridle_state( desktop ) {
+            opacity: 1;
+
+            transition: none;
+        }
+    }
+
+    &link{
+        padding-top: $gutter;
+
+        border-bottom: 1px solid $white;
+
+        color: $white;
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+
+        @include gridle_state( desktop ) {
+            border: none;
+        }
+    }
+
+    &button {
+        background-color: $dark-grey;
+
+        border: 1px solid $white;
+
+        border-radius: 3px;
+
+        color: $white;
+        text-transform: uppercase;
+    }
 }

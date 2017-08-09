@@ -1,6 +1,120 @@
+header{
+    padding: ($gutter * 2) $gutter;
+
+    @include gridle_state( desktop ) {
+        padding: ($gutter * 2.5) ($gutter * 2);
+    }
+}
+
 .header__home-link{
     display: inline-block;
 
     width: 175px;
     height: 35px;
+
+    margin-left: $gutter;
+
+    @include gridle_state( desktop ) {
+        width: 207px;
+        height: 38px;
+
+        margin-left: $gutter * 2;
+    }
+}
+
+.topnav__{
+    float: right;
+
+    width: 82px;
+    height: 32px;
+
+    margin-right: 10px;
+
+    @include gridle_state( desktop ) {
+        width: auto;
+        height: auto;
+    }
+
+    &control{
+        display: none;
+
+        + label {
+            position: absolute;
+
+            width: 80px;
+            height: 30px;
+
+            padding-left: 30px;
+            padding-top: 8px;
+
+            @include gridle_state( desktop ) {
+                display: none;
+            }
+        }
+
+        &:checked{
+            + label{
+                + .topnav__menu-wrapper{
+                    display: block;
+
+                    top:75px;
+
+                    @include gridle_state( desktop ) {
+                        display: inline;
+
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &menu-wrapper{
+        position: absolute;
+
+        left: 0;
+        top: -221px;
+
+        width: 100%;
+
+        padding: 0 $gutter ($gutter * 2) ;
+
+        @include gridle_state( desktop ) {
+            position: relative;
+
+            top: 0;
+
+            width: auto;
+        }
+    }
+
+    &link{
+        display: block;
+        height: $target-size;
+
+        @include gridle_state( desktop ) {
+            display: inline;
+
+            margin-right: $gutter;
+        }
+
+        @include gridle_state( desktop-md ) {
+            margin-right: $gutter * 3.5;
+        }
+    }
+
+    &button {
+        display: block;
+
+        width: 85px;
+        height: $target-size;
+
+        margin: ($gutter * 2) auto 0;
+
+        @include gridle_state( desktop ) {
+            display: inline;
+
+            margin: 0;
+        }
+    }
 }
