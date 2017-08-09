@@ -1,10 +1,12 @@
 @import '../../../node_modules/gridle/sass/grid';
 
-@include gridle_setup( (
+$settings : (
     context : 12,
     gutter-width : 10px,
-    direction : rtl
-) );
+    direction : ltr
+);
+
+@include gridle_setup( $settings );
 
 @include gridle_register_default_mobile_first_states();
 
@@ -29,6 +31,8 @@
 @include gridle_register_state( desktop-md, (
     min-width : 1025px
 ) );
+
+@include gridle_generate_classes ( );
 
 .container {
     max-width : 1200 - ($gutter * 2);
