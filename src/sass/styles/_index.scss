@@ -7,7 +7,7 @@ body {
 }
 
 header{
-    background: $dark-grey;
+    background-color: $dark-grey;
 
     color: $white;
 }
@@ -98,4 +98,48 @@ header{
         color: $white;
         text-transform: uppercase;
     }
+}
+
+
+.hero__{
+    background: $dark-grey;
+
+    color: $white;
+
+    overflow: hidden;
+
+    h1, h2{
+        text-align: center;
+
+        @include gridle_state( desktop ) {
+            text-align: left;
+        }
+    }
+
+    h1{
+        font-family: 'geogrotesque';
+        letter-spacing: -0.03rem;
+
+        @include gridle_state( desktop ) {
+            font-size: 45px;
+        }
+    }
+
+    h2{
+        font-size: 16px;
+        font-weight: normal;
+    }
+}
+
+.--cta{
+    background-color: $primary;
+
+    border: none;
+    border-radius: 3px;
+
+    color: $white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: -0.03rem;
 }
